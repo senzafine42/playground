@@ -149,3 +149,26 @@ output "private_key_pem" {
 	sensitive   = true
 }
 
+variable "aws_region" {
+  description = "AWS region to deploy into"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "image_os" {
+  description = "Select os to use for AMI: 'linux' or 'windows'"
+  type        = string
+  default     = "linux"
+}
+
+variable "allowed_cidr" {
+  description = "CIDR allowed for SSH/RDP access"
+  type        = string
+  default     = "0.0.0.0/0"
+}
